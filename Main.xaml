@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:Annotation.AnnotationText="UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9" sap:VirtualizedContainerService.HintSize="774,4884" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umabf="clr-namespace:UiPath.Mail.Activities.Business.ForEachMail;assembly=UiPath.Mail.Activities" xmlns:umabh="clr-namespace:UiPath.Mail.Activities.Business.HtmlEditor;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" VisualBasic.Settings="{x:Null}" sap2010:Annotation.AnnotationText="UPTF00000088eyI8SGVscExpbms+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8SW5pdGlhbFRvb2x0aXA+a19fQmFja2luZ0ZpZWxkIjpudWxsLCI8VmVyc2lvbj5rX19CYWNraW5nRmllbGQiOjF9" sap:VirtualizedContainerService.HintSize="774,5187" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System.Net.Mail" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umabf="clr-namespace:UiPath.Mail.Activities.Business.ForEachMail;assembly=UiPath.Mail.Activities" xmlns:umabh="clr-namespace:UiPath.Mail.Activities.Business.HtmlEditor;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -105,9 +105,10 @@
       <AssemblyReference>System.Reflection.MetadataLoadContext</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="784,4819" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="784,5122" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IList(x:String)" Name="OutputReport" />
+      <Variable x:TypeArguments="x:String" Name="strOutputReport" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -115,19 +116,19 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:CreateList x:TypeArguments="x:String" DisplayName="Create Output Report List" sap:VirtualizedContainerService.HintSize="722,173" sap2010:WorkflowViewState.IdRef="CreateList`1_3" NewList="[OutputReport]" />
-    <umab:GmailApplicationCard ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Account="lisc99@gmail.com" DisplayName="Use Gmail Account" EmailAddress="lisc99@gmail.com" sap:VirtualizedContainerService.HintSize="722,4558" sap2010:WorkflowViewState.IdRef="GmailApplicationCard_1" Timeout="90" UseConnectionService="False">
+    <umab:GmailApplicationCard ConnectionAccountName="{x:Null}" ConnectionId="{x:Null}" Account="lisc99@gmail.com" DisplayName="Use Gmail Account" EmailAddress="lisc99@gmail.com" sap:VirtualizedContainerService.HintSize="722,4697" sap2010:WorkflowViewState.IdRef="GmailApplicationCard_1" Timeout="90" UseConnectionService="False">
       <umab:GmailApplicationCard.Body>
         <ActivityAction x:TypeArguments="um:IMailQuickHandle">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Gmail" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Read Emails" sap:VirtualizedContainerService.HintSize="688,4355" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Read Emails" sap:VirtualizedContainerService.HintSize="688,4477" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <umab:ForEachEmailX DisplayName="For Each Email Containing World Dummy In Subject" sap:VirtualizedContainerService.HintSize="626,4270" sap2010:WorkflowViewState.IdRef="ForEachEmailX_1" IncludeSubfolders="False" Mails="[Gmail.Folder(&quot;Inbox&quot;)]" NumberOfEmailsLimit="0" UnreadOnly="False" WithAttachmentsOnly="False">
+            <umab:ForEachEmailX DisplayName="For Each Email Containing World Dummy In Subject" sap:VirtualizedContainerService.HintSize="626,4392" sap2010:WorkflowViewState.IdRef="ForEachEmailX_1" IncludeSubfolders="False" Mails="[Gmail.Folder(&quot;Inbox&quot;)]" NumberOfEmailsLimit="0" UnreadOnly="False" WithAttachmentsOnly="False">
               <umab:ForEachEmailX.Body>
                 <ActivityAction x:TypeArguments="snm:MailMessage, x:Int32">
                   <ActivityAction.Argument1>
@@ -136,7 +137,7 @@
                   <ActivityAction.Argument2>
                     <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
                   </ActivityAction.Argument2>
-                  <Sequence DisplayName="Perform Email Operations" sap:VirtualizedContainerService.HintSize="592,3988" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Perform Email Operations" sap:VirtualizedContainerService.HintSize="592,4110" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -250,7 +251,7 @@
                         </Sequence>
                       </If.Else>
                     </If>
-                    <If Condition="[CurrentMail.Subject.ToLower.Contains(&quot;delete&quot;)]" DisplayName="If Subject Contains &quot;Delete&quot;" sap:VirtualizedContainerService.HintSize="530,593" sap2010:WorkflowViewState.IdRef="If_5">
+                    <If Condition="[CurrentMail.Subject.ToLower.Contains(&quot;delete&quot;)]" DisplayName="If Subject Contains &quot;Delete&quot;" sap:VirtualizedContainerService.HintSize="530,610" sap2010:WorkflowViewState.IdRef="If_5">
                       <If.Then>
                         <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="496,382" sap2010:WorkflowViewState.IdRef="Sequence_12">
                           <sap:WorkflowViewStateService.ViewState>
@@ -258,7 +259,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <umab:DeleteMailX DisplayName="Delete Email" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="DeleteMailX_1" MailMessage="[CurrentMail]" />
+                          <umab:DeleteMailX DisplayName="Delete Specified Email" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="DeleteMailX_1" MailMessage="[CurrentMail]" />
                           <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Deleted to OutputReport List" sap:VirtualizedContainerService.HintSize="434,156" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_6" ItemToAppend="Email Deleted" List="[OutputReport]" />
                         </Sequence>
                       </If.Then>
@@ -273,6 +274,14 @@
                         </Sequence>
                       </If.Else>
                     </If>
+                    <Assign DisplayName="Assign OutputReport to String" sap:VirtualizedContainerService.HintSize="530,105" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[strOutputReport]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[String.Join(Environment.NewLine, OutputReport)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
                   </Sequence>
                 </ActivityAction>
               </umab:ForEachEmailX.Body>
@@ -301,5 +310,6 @@
         </InArgument>
       </umab:GmailApplicationCard.ClientSecret>
     </umab:GmailApplicationCard>
+    <ui:LogMessage DisplayName="Log OutputReport To Output Panel" sap:VirtualizedContainerService.HintSize="722,164" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[strOutputReport]" />
   </Sequence>
 </Activity>
